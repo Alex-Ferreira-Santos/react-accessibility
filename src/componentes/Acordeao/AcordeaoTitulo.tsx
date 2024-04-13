@@ -3,14 +3,14 @@ import Tipografia from "../Tipografia";
 
 type AcordeaoConteudoPropsType = {
   id: string;
-  title: string;
+  titulo: string;
   estaAberto: boolean;
   alternarVisibilidade: () => void;
 };
 
 const AcordeaoTitulo = ({
   id,
-  title,
+  titulo,
   estaAberto,
   alternarVisibilidade,
 }: AcordeaoConteudoPropsType) => {
@@ -23,7 +23,7 @@ const AcordeaoTitulo = ({
       onClick={alternarVisibilidade}
     >
       <Tipografia elemento="h2" variante="h3" cor="cinza">
-        {title}
+        {titulo}
       </Tipografia>
       <span>{estaAberto ? <IconeSetaCima /> : <IconeSetaBaixo />}</span>
     </summary>
