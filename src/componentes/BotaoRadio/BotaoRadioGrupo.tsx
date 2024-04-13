@@ -1,7 +1,7 @@
 import { PropsWithChildren } from "react";
 
 type BotaoRadioGrupoPropsType = PropsWithChildren & {
-  legenda: string;
+  legenda?: string;
   ariaLabel: string;
 };
 

@@ -2,18 +2,18 @@ import "./BotaoRadio.css";
 
 export type BotaoRadioPropsType = React.HTMLAttributes<HTMLInputElement> & {
   id: string;
-  name: string;
+  nome: string;
   valor: string;
-  checked: boolean;
+  selecionado: boolean;
   aoMudar: (evento: React.ChangeEvent<HTMLInputElement>) => void;
   textoLegenda: string;
 };
 
 const BotaoRadio = ({
   id,
-  name,
+  nome,
   aoMudar,
-  checked,
+  selecionado,
   valor,
   textoLegenda,
 }: BotaoRadioPropsType) => {
@@ -22,10 +22,10 @@ const BotaoRadio = ({
       <label htmlFor={id} className="botao__radio--legenda">
         <input
           type="radio"
-          name={name}
+          name={nome}
           id={id}
           value={valor}
-          checked={checked}
+          checked={selecionado}
           onChange={aoMudar}
         />
         <span>{textoLegenda}</span>
