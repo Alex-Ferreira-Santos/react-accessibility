@@ -26,7 +26,7 @@ const Faq = () => {
               titulo={duvida.titulo}
               id={duvida.id}
               estaAberto={aberturasPorItem[duvida.id] || false}
-              alternarVisibilidade={() => alternarVisibilidade}
+              alternarVisibilidade={() => alternarVisibilidade(duvida.id)}
             />
 
             <AcordeaoDescricao

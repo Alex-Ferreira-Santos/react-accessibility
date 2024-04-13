@@ -15,18 +15,14 @@ const AcordeaoTitulo = ({
   alternarVisibilidade,
 }: AcordeaoConteudoPropsType) => {
   return (
-    <summary
-      role="button"
-      className="acordeao__titulo"
-      aria-expanded={estaAberto}
-      aria-controls={id}
-      onClick={alternarVisibilidade}
-    >
-      <Tipografia elemento="h2" variante="h3" cor="cinza">
-        {titulo}
-      </Tipografia>
+    <button onClick={alternarVisibilidade} className="acordeao__titulo">
+      <summary aria-expanded={estaAberto} aria-controls={id}>
+        <Tipografia elemento="h2" variante="h3" cor="cinza">
+          {titulo}
+        </Tipografia>
+      </summary>
       <span>{estaAberto ? <IconeSetaCima /> : <IconeSetaBaixo />}</span>
-    </summary>
+    </button>
   );
 };
 
