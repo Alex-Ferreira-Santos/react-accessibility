@@ -2,8 +2,16 @@ import "./Inscricao.css";
 import Botao from "@/componentes/Botao";
 import CampoDigitacao from "@/componentes/CampoDigitacao";
 import Tipografia from "@/componentes/Tipografia";
+import { useEffect, useRef } from "react";
 
 const Inscricao = () => {
+  const campoDeDigitacaoRef = useRef<HTMLInputElement | null>(null);
+
+  useEffect(() => {
+    if (campoDeDigitacaoRef.current) {
+      campoDeDigitacaoRef.current.focus();
+    }
+  }, []);
   return (
     <section className="secao__inscricao">
       <div className="secao__inscricao--conteudo">
@@ -14,15 +22,13 @@ const Inscricao = () => {
           Cadastre seu email em nossa newsletter e saiba dos descontos, cupons e
           novidades em primeira mão!
         </Tipografia>
-        <form
-          noValidate
-          className="secao__inscricao--formulario"
-        >
+        <form noValidate className="secao__inscricao--formulario">
           <CampoDigitacao
             type="email"
             name="inscricao"
             placeholder="Digite seu melhor endereço de email"
             style={{ width: "650px" }}
+            ref={campoDeDigitacaoRef}
           />
           <Botao variante="primario" type="submit">
             Inscrever
